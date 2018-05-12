@@ -1,0 +1,22 @@
+ui<-fluidPage(theme=shinytheme('flatly'),
+  titlePanel('Ker computing pre revenue seed stage valuation - Bill Payne method'),
+  sidebarPanel(
+    numericInput('ref','Reference valuation (company or mean value) in million Euros',
+                 value=.75),
+    headerPanel('Factors proportional to reference'),
+    sliderInput('management', 'Strength of the management team 30%',
+                 min = 0, max = 2,value=.5,step = .1),
+    sliderInput('opp', 'Size of the opportunity 25%',
+                min = 0, max = 2,value=.5,step = .1),
+    sliderInput('tech','Product/Technology 15%',
+                min = 0, max = 2,value=.5,step = .1),
+    sliderInput('comp', 'Competitive environment 10%',
+                min = 0, max = 2,value=.5,step = .1),
+    sliderInput('hihis', 'Marketing/Sales/partnership 10%',
+                min = 0, max = 2,value=.5,step = .1),
+    sliderInput('invest', 'Need for Additional Investment 5%',
+                min = 0, max = 2,value=.5,step = .1),
+    sliderInput('other', 'Other factors (location) 5%',
+                min = 0, max = 2,value=.5,step = .1)
+  ),
+  mainPanel(h1(textOutput('val'))))
